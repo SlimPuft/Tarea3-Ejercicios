@@ -160,3 +160,7 @@ resultado.sort(key=lambda x: x["precio"])
 
 for precio in resultado:
     print(precio["nombre"], ":", precio["precio"])
+
+# Filtrado y estadística de temperaturas: Dado un array de temperaturas de un mes, filtra los días con temperaturas mayores al promedio y muestra estadísticas como el mínimo, máximo y promedio general.
+
+# Solución:
