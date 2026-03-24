@@ -164,3 +164,107 @@ for precio in resultado:
 # Filtrado y estadística de temperaturas: Dado un array de temperaturas de un mes, filtra los días con temperaturas mayores al promedio y muestra estadísticas como el mínimo, máximo y promedio general.
 
 # Solución:
+
+temperaturas = [22, 25, 23, 15, 11, 19, 20]
+promedio = sum(temperaturas) / len(temperaturas)
+
+minima = min(temperaturas)
+maxima = max(temperaturas)
+
+print(f"El promedio es: {promedio}")
+print(f"La temperatura minima es: {minima}")
+print(f"La temperatura maxima es: {maxima}")
+
+print("Temperaturas mayores al promedio: ")
+
+for temperatura in temperaturas:
+    if temperatura > promedio:
+        print(temperatura)
+
+# Inversión y manipulación de arrays: Crea un array de palabras. Muestra el array original, luego uno con los elementos invertidos, y otro con cada palabra en mayúsculas si tiene más de 5 letras.
+
+# Solución:
+
+palabras = ["python", "computación", "programación", "tecnología", "algoritmo"]
+print(palabras)
+print(palabras[::-1])
+
+resultado = []
+
+for palabra in palabras:
+    if len(palabra) > 5:
+        resultado.append(palabra.upper())
+    else:
+        resultado.append(palabra)
+
+print(resultado)
+
+
+# Gestión de tareas: Crea una lista de tareas como objetos (nombre, completado: true/false). Permite añadir, marcar como completado y eliminar tareas usando métodos de array.
+
+# Solución:
+
+tareas = [
+    {"nombre": "Estudiar Python", "completado": False},
+    {"nombre": "Hacer ejercicio", "completado": False}
+]
+
+tareas.append({"nombre": "Leer libro", "completado": False})
+
+tareas[0]["completado"] = True
+
+nuevas_tareas = []
+
+for tarea in tareas:
+    if tarea["nombre"] != "Hacer ejercicio":
+        nuevas_tareas.append(tarea)
+
+tareas = nuevas_tareas
+
+print(tareas)
+
+# Evaluación de estudiantes: Dado un array de estudiantes (nombre, notas[]), calcula el promedio individual y muestra los que aprobaron (promedio ≥ 11) y su mención (suficiente, bueno, excelente).
+
+# Solución:
+
+estudiantes = [
+    {"nombre": "Leandro", "notas": [12, 14, 10]},
+    {"nombre": "Marcelo", "notas": [8, 9, 10]},
+    {"nombre": "Julissa", "notas": [18, 17, 19]}
+]
+
+for estudiante in estudiantes:
+    suma = 0
+
+    for nota in estudiante["notas"]:
+        suma += nota
+
+    promedio = suma / len(estudiante["notas"])
+
+    if promedio <= 13:
+        mencion = "suficiente"
+    elif promedio <= 16:
+        mencion = "bueno"
+    else:
+        mencion = "excelente"
+
+    print(estudiante["nombre"], "aprobó con",
+          round(promedio, 2), "-", mencion)
+
+# Agrupación por primera letra: Dado un array de nombres, agrupa los nombres por su primera letra en un objeto. Por ejemplo: { A: [Ana, Alberto], B: [Bruno, Brenda]}.
+
+# Solución:
+
+nombres = ["Leandro", "Marcelo", "Julissa", "Pamela", "Carlos", "Leopoldo"]
+
+agrupados = {}
+
+for nombre in nombres:
+    letra = nombre[0].upper()
+
+    if letra not in agrupados:
+        agrupados[letra] = []
+
+    agrupados[letra].append(nombre)
+
+print(agrupados)
